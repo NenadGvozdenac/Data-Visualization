@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Projects\Data Visualization\.metadata\.plugins\org.eclipse.jdt.core
+1572488809.index
+555119114.index

@@ -1,0 +1,17 @@
+package data_visualization;
+
+public class MainClass extends javax.swing.JFrame {
+
+	MainClass(JPanel panel) {
+		super.setTitle("Data Visualization");
+		
+		this.setBackground(Color.BLACK);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

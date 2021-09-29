@@ -1,0 +1,14 @@
+package data_visualization;
+
+public class MainClass extends javax.swing.JFrame {
+
+	MainClass() {
+		super.setTitle("Data Visualization");
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

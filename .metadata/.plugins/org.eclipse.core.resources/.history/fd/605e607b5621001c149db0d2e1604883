@@ -1,0 +1,123 @@
+package data_visualization;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+
+public class MainClass extends JFrame {
+	
+	public static ArrayList<Integer> data = new ArrayList<Integer>();
+	public static int MAX_ELEMENTS = 5;
+	
+	public static JPanel create_panel() {
+		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(60 + MAX_ELEMENTS * 100, 400));
+		panel.setLayout(null);
+		
+		return panel;
+	}
+
+	public ArrayList<Integer> data_input() {
+		ArrayList<Integer> number_list = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i = 0; i < MAX_ELEMENTS; i++) {
+			System.out.print("Input integer: ");
+			int c = sc.nextInt();
+			number_list.add(c);
+		}
+		
+		return number_list;
+	}
+	
+	public void remove_components() {
+		for(Component c : this.getComponents()) {
+			if(c instanceof JPanel) {
+				((JPanel) c).removeAll();
+			}
+		}
+	}
+	
+	public static Boolean add_data_to_panel(JPanel panel) {
+		
+		for(int i = 0; i < data.size(); i++) {
+			
+			Integer k = data.get(i);
+			
+			if(k < 0 || k > 20) {
+				return false;
+			}
+			
+			JLabel label = new JLabel(k.toString(), JLabel.CENTER);
+		    label.setForeground(new Color(120, 90, 40));
+		    label.setBackground(new Color(100, 20, 70));
+		    Border border = BorderFactory.createLineBorder(Color.ORANGE);
+		    label.setBorder(border);
+		    label.setVerticalAlignment(JLabel.CENTER);
+			label.setLocation(30 + i * 100, 20);
+			label.setOpaque(true);
+			
+			label.setSize(new Dimension(90, i * 50));
+			panel.add(label);
+			
+		}
+		
+		return true;
+	}
+	
+	
+	public MainClass(JPanel panel) {
+		
+		data = data_input();
+		
+		super.setTitle("Data Visualization");
+		
+		this.getContentPane().add(panel);
+		if(add_data_to_panel(panel) == false) {
+			System.out.print("Error adding data, wrong input.");
+			System.exit(0);
+		};
+		this.pack();
+		this.setAlwaysOnTop(true);
+		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		
+		this.addFocusListener(new FocusListener() {
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				System.exit(0);
+				
+			}
+			
+		});
+		
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		new MainClass(create_panel());
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package data_visualization;
+
+public class MainClass extends JFrame {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

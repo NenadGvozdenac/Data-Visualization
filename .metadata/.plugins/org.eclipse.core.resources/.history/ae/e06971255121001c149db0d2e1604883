@@ -1,0 +1,27 @@
+package data_visualization;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MainClass extends JFrame {
+
+	public MainClass(JPanel panel) {
+		super.setTitle("Data Visualization");
+		
+		this.add(panel);
+		this.pack();
+		
+		this.setVisible(true);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(500, 500));
+		
+		new MainClass(panel);
+
+	}
+
+}

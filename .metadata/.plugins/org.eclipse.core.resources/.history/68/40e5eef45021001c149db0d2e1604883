@@ -1,0 +1,20 @@
+package data_visualization;
+
+public class MainClass extends javax.swing.JFrame {
+
+	MainClass(JPanel panel) {
+		super.setTitle("Data Visualization");
+		
+		this.add(panel);
+		this.pack();
+		
+		this.setVisible(true);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}
