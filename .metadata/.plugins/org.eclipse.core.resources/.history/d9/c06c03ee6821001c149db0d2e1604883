@@ -145,6 +145,7 @@ public class MainClass extends JFrame {
 			System.exit(0);
 		};
 		this.pack();
+		this.setAlwaysOnTop(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -172,6 +173,7 @@ public class MainClass extends JFrame {
 			@Override
 			public void windowOpened(WindowEvent e) {
 				// TODO Auto-generated method stub
+				
 			}
 
 			@Override

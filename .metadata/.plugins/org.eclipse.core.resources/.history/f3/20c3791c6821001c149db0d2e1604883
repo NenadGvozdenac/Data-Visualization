@@ -6,9 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.event.WindowStateListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -145,6 +142,7 @@ public class MainClass extends JFrame {
 			System.exit(0);
 		};
 		this.pack();
+		this.setAlwaysOnTop(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -167,42 +165,7 @@ public class MainClass extends JFrame {
 		
 		panel.add(button);
 		
-		this.addWindowListener(new WindowListener() {
-
-			@Override
-			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void windowClosing(WindowEvent e) {
-				JOptionPane.showMessageDialog(null, "Thank you for using this program.\nMade by Nenad Gvozdenac, FTN 2021.", "THANK YOU", JOptionPane.PLAIN_MESSAGE);
-			}
-
-			@Override
-			public void windowClosed(WindowEvent e) {
-				JOptionPane.showMessageDialog(null, "Thank you for using this program.\nMade by Nenad Gvozdenac, FTN 2021.", "THANK YOU", JOptionPane.PLAIN_MESSAGE);
-			}
-
-			@Override
-			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-			}
+		this.addWindowStateListener(new WindowStateListener() {
 			
 		});
 		
