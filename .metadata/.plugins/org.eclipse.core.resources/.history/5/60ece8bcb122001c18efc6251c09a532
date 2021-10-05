@@ -40,7 +40,7 @@ public class MainClass extends JFrame {
 
 	public ArrayList<Integer> data_input() {
 
-		MAX_ELEMENTS = Integer.parseInt(JOptionPane.showInputDialog(null, "How many elements do you want", "ELEMENT COUNT", JOptionPane.QUESTION_MESSAGE));
+		MAX_ELEMENTS = Integer.parseInt(JOptionPane.showInputDialog(null, "How many elements do you want", "ELEMENNT COUNT", JOptionPane.QUESTION_MESSAGE));
 		
 		for(int i = 0; i < MAX_ELEMENTS; i++) {
 			
